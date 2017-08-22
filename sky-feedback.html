@@ -1,0 +1,52 @@
+<div
+	class="sky-feedback"
+  	v-bind:class="{ success: success, error: error }">
+
+	<div
+		class="sky-feedback-top"
+		v-show="!open && !success">
+
+		<button
+			v-on:click="toggle('positive')">+</button>
+		<button
+			v-on:click="toggle('negative')">-</button>
+	</div>
+
+	<sky-reveal
+		class="sky-feedback-bottom"
+		v-bind:open="open">
+
+		<div
+			class="message"
+			v-show="success">Tak for din feedback.</div>
+
+		<form
+			v-show="!success"
+			v-on:submit.prevent="submit">
+
+			<div class="sky-feedback-group">
+				<input
+					type="text"
+					name="name"
+					v-model.trim="name">
+
+				<input
+					type="text"
+					name="email"
+					v-model.trim="email">
+			</div>
+
+			<div class="sky-feedback-group">
+				<textarea
+					name="comment"
+					v-model.trim="comment" />
+			</div>
+
+			<div
+				class="message"
+				v-show="error">Der skete desværre en fejl</div>
+
+			<input type="submit">
+		</form>
+	</sky-reveal>
+</div>

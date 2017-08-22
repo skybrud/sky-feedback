@@ -1,0 +1,51 @@
+.sky-feedback {
+	.sky-reveal {
+		min-height: 0;
+
+		&:after {
+			content: none;
+		}
+	}
+}
+
+.sky-feedback-top {
+	button {
+		margin: 0;
+		padding: 0;
+		border: none;
+		font: inherit;
+		outline: none;
+		cursor: pointer;
+		display: inline-block;
+		vertical-align: baseline;
+	}
+}
+
+.sky-feedback-bottom {
+	overflow: hidden;
+
+	.message {
+		overflow: hidden;
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	input[type=text] {
+		flex-shrink: 1;
+		flex-grow: 1;
+		width: 50%;
+		width: 50%;
+		margin-right: 10px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+.sky-feedback-group {
+	display: flex;
+	margin-bottom: 10px;
+}
